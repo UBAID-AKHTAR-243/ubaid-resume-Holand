@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubaid CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #f40103; /* Coca-Cola Red */
+            --secondary: #8B0000; /* Dark Red */
+            --accent: #D4AF37; /* Gold accent */
+            --light: #f8f8f8;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+        }
+
+
+        body {
+            background: linear-gradient(rgba(244, 1, 3, 0.8), rgba(139, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80');
+           
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for navigation */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+           
+            
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 10;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Revolving Logo Styles */
+        .revolving-logo {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .revolving-circle {
+            color: white;
+            text-align: center;
+            font-size: 8px;
+            background-color: var(--primary);
+            width: 100%;
+            height: 100%;
+            border: 3px solid white;
+            border-radius: 50%;
+            position: relative;
+            animation: rotateBorder 8s linear infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .revolving-ball {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            margin-top: -7px;
+            margin-left: -7px;
+            animation: rotateBall 8s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 8px;
+        }
+
+        @keyframes rotateBorder {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateBall {
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .circle-text {
+            font-size: 6px;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: white;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            background: transparent;
+            color: white;
+            border: none;
+            padding: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Three line hamburger icon */
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .dropdown-toggle:hover .hamburger-line {
+            background-color: var(--accent);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1001;
+            margin-top: 10px;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: #f8f8f8;
+            color: var(--primary);
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 5px 0;
+        }
+
+        /* Name Section*/
+        .name-section {
+            padding: 40px 0; 
+            background: linear-gradient(rgba(244, 1, 3, 0.8), rgba(139, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            border-top: 3px solid white;
+        }
+
+        .name-section h1 {
+            font-size: 3rem;
+            margin-bottom: 0px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .name-section p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: offwhite;
+        }
+
+        /* Modal Alert Styles */
+       .my-image {width: 40%;
+            height:40%;} 
+        
+        
+        .modal {
+            display: block;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            border-radius: 5px;
+        }
+        
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0;}
+            to {top: 0; opacity: 1;}
+        }
+        
+        .modal-header {
+            padding: 10px 16px;
+            background-color: #fa0d0d;
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 15px 16px;
+            text-align: center;
+        }
+        
+        .modal-footer {
+            padding: 10px 16px;
+            background-color: #fa0d0d;
+            color: white;
+            text-align: center;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .modal-body p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #333;
+        }
+        
+        #ubaid {
+            color: rgb(58, 33, 117);
+            font-weight: bold;
+        }
+        
+        .modal h1 {
+            font-size: 24px;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+   /* Slideshow Styles */
+   
+        .slideshow-container {
+            position: relative;
+            margin: 0 auto;
+            padding-left:0px;
+            overflow: hidden;
+            border-radius: 0%;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide-image {
+            width: 100%;
+ /*following line decreases height of slide*/
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 0px;
+        }
+
+        .slide-title-1 {
+            padding-left:25px;
+            font-size: 1.4rem;
+            color:white;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+      .slide-title-2 {
+            padding-left:25px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }  
+        
+        .slide-title-3 {
+            padding-left:25px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }  
+  
+  
+        .slide-title-4 {
+            padding-left:25px;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }    
+        
+        
+        .slide-title-5 {
+            padding-left:25px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }           
+        
+
+        .slide-description-1 {
+            padding-left:50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            max-width: 70%;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+         .slide-description-2 {
+            padding-left:50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            max-width: 70%;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .slide-description-3 {
+            padding-left:50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            max-width: 70%;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        } 
+       
+        .slide-description-4 {
+            padding-left:50px;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            max-width: 70%;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+         .slide-description-5 {
+            padding-left:50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            max-width: 70%;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+ 
+.slide-price-1 {
+             padding-left:50px;
+             font-size:12px;  padding-bottom:10px;
+         }
+
+.slide-price-2 {
+             padding-left:50px;
+             font-size:12px; padding-bottom:4px;
+         }
+         
+ .slide-price-3 {
+             padding-left:50px;
+             font-size:12px;  padding-bottom:10px;
+         }        
+         
+  .slide-price-4 {
+             padding-left:50px;
+             font-size:12px; padding-bottom:10px;
+         }       
+         
+
+.slide-price-5 {
+             padding-left:50px;
+             font-size:12px; padding-bottom:10px;
+         }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+/*if we change  last 0 of code to 0.5 .it will show the next,prev buttons shadow*/            
+            background-color: rgba(0, 0, 0, 0);
+            color: grey;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: var(--primary);
+        }
+/*we can also give negative values to align buttons moe to border side */
+        .prev {
+            left: -10px;
+        }
+
+        .next {
+            right: -10px;
+        }
+
+        /* Dots Indicator */
+        .dots-container {
+            text-align: center;
+  /*decreases height of dot div*/         
+            padding: 5px;
+            color:white;
+           
+        }
+
+        .dot {
+            font-size:7px;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin: 0 10px;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: blue;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+            background: white;
+           
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            padding: 30px;
+            border: 2px solid #f0f0f0;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(244, 1, 3, 0.15);
+            border-color: var(--primary);
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .info-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Social Icons Styles */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 120px;
+            height: 3px;
+            background: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .name-section h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .revolving-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .circle-text {
+                font-size: 5px;
+            }
+            
+            .revolving-ball {
+                width: 12px;
+                height: 12px;
+                margin-top: -6px;
+                margin-left: -6px;
+                font-size: 7px;
+            }                
+            
+            .prev, .next {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .name-section {
+                padding: 30px 0;
+            }
+            
+            .name-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            .revolving-logo {
+                width: 45px;
+                height: 45px;
+            }
+            
+   
+                            
+    </style>
+</head>
+<body>
+    <!-- Alert Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+   <img src="ubaid.jpeg" alt="ubaid image" class="my-image">  <h3>Web Developer,Data Scientist & AI Engineer</h3>           
+            </div>
+            <div class="modal-body">
+                <p>📊 Expert in web development, Data Analysis & Sentiment Analysis.</p>
+                <p id="ubaid">🤖 Specialized in AI Agent Development. </p>
+            </div>
+            <div class="modal-footer">
+      <h3>PH :  03467711243</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <!-- Revolving Logo -->
+                    <div class="revolving-logo">
+                        <div class="revolving-circle">
+                            <div class="circle-text">Ubaid's</div>
+                            <div class="revolving-ball">U</div>
+                        </div>
+                    </div>
+               <div class="logo-text"><span>Resume (CV)</span></div>
+                </div>
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <button class="dropdown-toggle">
+                        <!-- Three line hamburger icon -->
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <!-- Navigation items in requested order -->
+                        <a href="#name-section" class="dropdown-item">Name</a>
+                        <a href="#experience-section" class="dropdown-item">Experience</a>
+                        <a href="#qualification-section" class="dropdown-item">Qualification</a>
+                        <a href="#address-section" class="dropdown-item">Address</a>
+                        <a href="#contact-section" class="dropdown-item">Contact</a>
+                        <a href="#personal-info-section" class="dropdown-item">Personal Information</a>
+                        <a href="#language-section" class="dropdown-item">Language</a>
+                        
+                        <!-- Divider before social contacts -->
+                        <div class="dropdown-divider"></div>
+                        
+                        <!-- Social contacts icons with functional links -->
+                        <div class="social-icons" style="padding: 15px 20px; justify-content: center;">
+                            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Name Section - Now below header with reduced height -->
+    <section class="name-section" id="name-section">
+        <div class="container">
+            <h1>M. Ubaid Akhtar</h1>
+            <h3>Web Developer,Data Scientist & AI Engineer</h3>
+            <p>------------</p>
+        </div>
+    </section>
+
+       <!-- Slideshow Section -->
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="data-1.jpeg" alt="1" class="slide-image">
+                    <div class="slide-content">
+                         <h2 class="slide-title-1">AI Voice Agents</h2></h2>
+                            <p class="slide-description-1">I develope agents based on</br>▶ RAG </br>▶ LLM's</br>▶ Vector Database</p>
+                        <div class="slide-price-1">🔵</div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="data-2.jpeg" alt="2" class="slide-image">
+                    <div class="slide-content">
+                         <h2 class="slide-title-2">Data Scientist & AI Engineer
+                            <p class="slide-description-2">I develop  </br>▶ Machine Learning & DL</br>▶ NLP(Natural Language Processing) </p>
+                        <div class="slide-price-2">🔵</div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="data-3.jpeg" alt="3" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="slide-title-3"> Web Developer</h2>
+                        
+ <p class="slide-description-3">▶ I build modern, responsive and smart design websites.
+</br>▶Specialized in <b>WordPress development</b></p>  
+                     
+ <div class="slide-price-3">🔵</div>                                            
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <img src="data-4.jpeg" alt="4" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="slide-title-3">NLP</h2>
+                            <p class="slide-description-4">I am Specialized in Natural Language Processing</br>▶ Data Analysis</br>▶ Sentiment Analysis.</p>
+                        <div class="slide-price-4">🔵</div>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <img src="data-5.jpeg" alt="" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="slide-title-2">Computer Vision</h2>
+                            <p class="slide-description-5">I can develope AI apps for</br>▶ Face detection </br>▶ Early detection of Cancer & other diseases. </p>
+                        <div class="slide-price-5">🔵</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation buttons code &#10094; &#10095; -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        
+        <!-- Dots indicator -->
+        <div class="dots-container">
+            <span class="dot active" data-slide="0">1</span>
+            <span class="dot" data-slide="1">2</span>
+            <span class="dot" data-slide="2">3</span>
+            <span class="dot" data-slide="3">4</span>
+            <span class="dot" data-slide="4">5</span>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="content-section" id="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2></br><h3>(of 2 Years in)</h3>
+            <div class="section-grid">
+                <div class="info-card">
+                    <h3>Agentic AI</h3>
+                    <p>I develop automatic AI voice ChatBots that serve as your business assistants, providing intelligent automation solutions.</p>
+                </div>
+                <div class="info-card">
+                    <h3>NLP (Natural Language Processing)</h3>
+                    <p>Specialized in Data Analysis & Sentiment Analysis to extract meaningful insights from textual data.</p>
+                </div>
+                <div class="info-card">
+                    <h3>ML & DL Applications</h3>
+                    <p>Expert in training and deploying Machine Learning and Deep Learning models for various applications.</p>
+                </div>
+                <div class="info-card">
+                    <h3>ML_Ops & Dev_Ops Engineering</h3>
+                    <p>Deploy chatbots and websites using CI/CD Pipeline with GitHub, SonarQube, Docker, Kubernetes, and Amazon platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Section -->
+    <section class="content-section" id="qualification-section">
+        <div class="container">
+            <h2 class="section-title">Qualification</h2>
+            <div class="section-grid">
+                <div class="info-card">
+                    <h3><u>Education</u></h3>
+                <p>                     <h4>Graduation :</h4>  GC University FSD<h4>Data Science & Artilicial intelligence :</h4> PIAIC (Presidential Initiative of Artificial Intelligence & Computing) Karachi Pakistan.
+                </p>
+                </div>
+                <div class="info-card">
+               <h3><u>SKILLS</u></h3>
+               <p>                       <h4>Languages :</h4>Python - HTML - CSS<h4>Frameworks & Libraries :</h4>Numpy - Pandas - SciketLearn<h4>Artificial Intelligence :</h4> Machine Learning - Deep Learning - Natural Laguage Processing - AI Voice Agents <h4>Tools :</h4> Git & Github - Docker & Dockerhub - Jenkins - SonarQube - Terrafarm - Kubernetes<h4>OS :</h4>Windows & Linux
+                </p>
+                </div>
+                <div class="info-card">
+                    <h3><u>Certifications</u></h3>
+                    <p>
+
+<h4>CCA ( Certification of Computer Applications)  MS-Office - MS-Word - MS-Excel :</h4>Center of Information Technology Gojra.<h4> Certification of Matric.</h4>Govt.Afaaq High School Faisal Abad.
+                   </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Address Section -->
+    <section class="content-section" id="address-section">
+        <div class="container">
+            <h2 class="section-title">Address</h2>
+            <div class="section-grid">
+                <div class="info-card">
+                    <h3>Current Address</h3>
+                    <p>CHAK NO. 243 G.B. KALYAN PUR TEHSIL GOJRA (Postal Code 36120)<br>DISTRICT TOBA TEK SINGH, PUNJAB, PAKISTAN</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section" id="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="section-grid">
+                <div class="info-card">
+                    <h3>Contact Information</h3>
+                    <p>Phone: +923467711243<br>Email: ubaid243@gmail.com<br>Website: www.MegaSoft.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Information Section -->
+    <section class="content-section" id="personal-info-section">
+        <div class="container">
+            <h2 class="section-title">Personal Information</h2>
+            <div class="section-grid">
+                <div class="info-card">
+                    <h3>Personal Details</h3>
+                    <p>Gender: Male<br>Date of Birth: 01-04-1974<br>Nationality: Pakistani</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Section -->
+    <section class="content-section" id="language-section">
+        <div class="container">
+            <h2 class="section-title">Language</h2>
+            <div class="section-grid">
+                <div class="info-card">
+                    <h3>Languages</h3>
+                    <p>English, Urdu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#name-section">Name</a></li>
+                        <li><a href="#experience-section">Experience</a></li>
+                        <li><a href="#qualification-section">Qualification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +923467711243</li>
+                        <li><i class="fas fa-envelope"></i> ubaid243@gmail.com</li>
+                      <!--   <li><i class="fas fa-globe"></i> www.MegaSoft.com</li>-->
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© Copy; 2025 MegaSoft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Modal Alert functionality
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Dropdown functionality
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        
+        // Toggle dropdown menu visibility
+        dropdownToggle.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-toggle')) {
+                if (dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                }
+            }
+        });
+
+        // Close dropdown when clicking on a menu item
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                dropdownMenu.classList.remove('show');
+            });
+        });
+
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelector('.slides');
+            const slideItems = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const dots = document.querySelectorAll('.dot');
+            
+            let currentSlide = 0;
+            const totalSlides = slideItems.length;
+            
+            // Initialize slideshow
+            function initSlideshow() {
+                updateSlideshow();
+                
+                // Auto advance slides every 5 seconds
+                setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }
+            
+            // Update slideshow display
+            function updateSlideshow() {
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Go to next slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlideshow();
+            }
+            
+            // Go to previous slide
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlideshow();
+            }
+            
+            // Go to specific slide
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                updateSlideshow();
+            }
+            
+            // Event listeners for slideshow navigation
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // Event listeners for dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    goToSlide(slideIndex);
+                });
+            });
+            
+            // Initialize the slideshow
+            initSlideshow();
+        });
+    </script>
+</body>
+</html>
